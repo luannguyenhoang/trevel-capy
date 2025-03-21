@@ -1,0 +1,14 @@
+
+
+.post__heading h1{
+ color: red;
+}
+.post__heading p {
+  padding-bottom: 5%;
+}
+
+.post__heading img {
+ margin: auto;
+ border-radius: 10px;
+}
+

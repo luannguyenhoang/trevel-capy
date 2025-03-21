@@ -1,0 +1,21 @@
+
+
+.post__heading h1{
+ color: red;
+}
+.post__heading h3{
+  margin: auto;
+  text-align: center;
+ color: red;
+}
+.post__heading p {
+  padding-bottom: 5%;
+}
+
+.post__heading img {
+ margin: auto;
+ width: 100%;
+ object-fit: cover;
+ border-radius: 10px;
+}
+

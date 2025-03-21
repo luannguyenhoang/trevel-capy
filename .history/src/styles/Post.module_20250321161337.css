@@ -1,0 +1,15 @@
+.post__heading p {
+  padding-bottom: 5%;
+}
+
+
+.post__heading {
+  position: relative;
+  overflow: hidden;
+}
+
+.post__heading img {
+ margin: auto;
+ border-radius: 10px;
+}
+
