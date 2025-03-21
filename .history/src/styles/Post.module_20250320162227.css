@@ -1,0 +1,11 @@
+.post__heading img {
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.post__heading p {
+  padding-bottom: 5%;
+}
+.post__heading p:hover {
+  color: rgb(202, 54, 8);
+}

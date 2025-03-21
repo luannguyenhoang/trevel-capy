@@ -1,0 +1,16 @@
+.post__heading p {
+  padding-bottom: 5%;
+}
+.post__heading:hover {
+  color: rgb(8, 157, 202);
+}
+
+.post__heading {
+  position: relative;
+  overflow: hidden;
+}
+
+.post__heading:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s easei;
+}

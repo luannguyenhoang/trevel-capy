@@ -1,0 +1,9 @@
+.post__heading img {
+  border-radius: 5%;
+  object-fit: cover;
+  max-height: 0%;
+}
+
+.post__heading p {
+  padding-bottom: 5%;
+}

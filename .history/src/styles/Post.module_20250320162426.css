@@ -1,0 +1,7 @@
+.post__heading p {
+  padding-bottom: 5%;
+}
+.post__heading:hover {
+  color: rgb(8, 157, 202);
+}
+.post__heading !imp{}

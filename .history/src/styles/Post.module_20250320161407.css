@@ -1,0 +1,10 @@
+.post__heading img {
+
+  object-fit: cover;
+  max-height: 10%;
+  max-width: 10%;
+}
+
+.post__heading p {
+  padding-bottom: 5%;
+}

@@ -1,0 +1,60 @@
+import { ScrollAnimation } from "@/components/organisms/ScrollAnimation";
+import { MienBacContentItem } from "@/type/types";
+import { Box, Heading, Image, Text, Flex, HStack } from "@chakra-ui/react";
+
+export default function DestinationGroup({
+  group,
+  index,
+}: {
+  group: MienBacContentItem;
+  index: number;
+}) {
+  return (
+    <ScrollAnimation delay={0.3}>
+      <Box 
+        display="flex"
+        flexDirection="row"
+        mb={6}
+        borderBottomWidth={index % 2 === 0 ? "1px" : "0px"}
+        borderColor="gray.200"
+        pb={4}
+      >
+        {/* Hình ảnh bên trái */}
+        <Box width="100px" height="80px" mr={4}>
+          <Image
+            width="100%"
+            height="100%"
+            borderRadius="md"
+            src={group.hinh_anh}
+            alt={group.dia_diem}
+            objectFit="cover"
+          />
+        </Box>
+        
+        {/* Thông tin bên phải */}
+        <Box flex={1}>
+          <Heading as="h3" size="sm" fontWeight="bold" mb={1}>
+            {group.dia_diem}
+          </Heading>
+          
+          <HStack spacing={1} mb={1}>
+            <Text color="yellow.400" fontSize="xs">★★★★★</Text>
+            <Text color="blue.600" fontSize="sm" fontWeight="bold">8.8/10</Text>
+          </HStack>
+          
+          <Text color="gray.600" fontSize="sm" mb={1}>
+            {group.ghi_chu}
+          </Text>
+          
+          <Text as="s" color="gray.500" fontSize="xs">
+            1.084.914 VND
+          </Text>
+          
+          <Text color="orange.500" fontWeight="bold" fontSize="sm">
+            934.330 VND
+          </Text>
+        </Box>
+      </Box>
+    </ScrollAnimation>
+  );
+}
