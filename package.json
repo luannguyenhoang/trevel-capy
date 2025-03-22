@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^2.6.1",
     "@types/react-slick": "^0.23.13",
     "framer-motion": "^12.5.0",
+    "html-react-parser": "^5.2.2",
     "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

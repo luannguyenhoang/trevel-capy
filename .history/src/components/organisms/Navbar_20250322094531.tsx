@@ -14,7 +14,10 @@ import {
   PopoverContent,
   useColorModeValue,
   useDisclosure,
-  Tooltip,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -27,6 +30,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { NavItem } from "@/type/types";
+import CartShop from "../molecules/Cart";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -105,18 +109,41 @@ export default function WithSubnavigation() {
           spacing={6}
         >
           {isLoggedIn ? (
-            <Button
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              bg={"red.400"}
-              _hover={{
-                bg: "red.500",
-              }}
-              onClick={handleLogout}
-            >
-              Đăng xuất
-            </Button>
+            <>
+              <CartShop />
+
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  aria-label="Shopping cart"
+                  width={10}
+                  height={10}
+                  variant="outline"
+                  rounded={"full"}
+                  bgImage="url('/logo.png')"
+                  bgSize="cover"
+                  bgPosition="center"
+                  _hover={{
+                    objectFit: "cover",
+                    bgImage: "url('/logo.png')",
+                    opacity: 0.9,
+                    transform: "scale(1.05)",
+                  }}
+                  borderColor="gray.200"
+                  _active={{
+                    objectFit: "cover",
+                    bgImage: "url('/logo.png')",
+                    transform: "scale(0.98)",
+                  }}
+                />
+                <MenuList>
+                  <MenuItem>Create a Copy</MenuItem>
+                  <MenuItem>Mark as Draft</MenuItem>
+                  <MenuItem>Delete</MenuItem>
+                  <MenuItem onClick={handleLogout}> Đăng xuất</MenuItem>
+                </MenuList>
+              </Menu>
+            </>
           ) : (
             <>
               <Button
@@ -311,8 +338,6 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   );
 };
-
-
 
 const NAV_ITEMS: Array<NavItem> = [
   {
