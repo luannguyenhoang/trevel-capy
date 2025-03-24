@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": ,
+      "name": "Tour Du lịch Hạ Long 2 ngày 1 đêm",
+      "description": "Khám phá Vịnh Hạ Long - Di sản thiên nhiên thế giới với hàng nghìn hòn đảo đá vôi và các hang động kỳ thú",
+      "price": 1500000,
+      "currency": "VND",
+      "images": [
+        "/images/halong1.jpg",
+        "/images/halong2.jpg"
+      ],
+      "category": "Miền Bắc",
+      "duration": "2 ngày 1 đêm",
+      "rating": 4.8,
+      "reviewCount": 156
+    },
+    {
+      "id": 2,
+      "name": "Tour Đà Nẵng - Hội An - Bà Nà Hills",
+      "description": "Tham quan phố cổ Hội An, tắm biển Đà Nẵng và thăm Cầu Vàng tại Bà Nà Hills",
+      "price": 2200000,
+      "currency": "VND",
+      "images": [
+        "/images/danang1.jpg",
+        "/images/hoian1.jpg"
+      ],
+      "category": "Miền Trung",
+      "duration": "3 ngày 2 đêm",
+      "rating": 4.7,
+      "reviewCount": 203
+    },
+    {
+      "id": 3,
+      "name": "Tour Phú Quốc nghỉ dưỡng cao cấp",
+      "description": "Tận hưởng kỳ nghỉ tuyệt vời tại đảo ngọc Phú Quốc với bãi biển cát trắng và dịch vụ resort 5 sao",
+      "price": 3500000,
+      "currency": "VND",
+      "images": [
+        "/images/phuquoc1.jpg",
+        "/images/phuquoc2.jpg"
+      ],
+      "category": "Miền Nam",
+      "duration": "4 ngày 3 đêm",
+      "rating": 4.9,
+      "reviewCount": 127
+    }
+  ]
+}
