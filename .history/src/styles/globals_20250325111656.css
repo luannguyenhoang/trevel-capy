@@ -1,0 +1,229 @@
+@import "tailwindcss";
+// timing functions
+$ease-in-out-quad: cubic-bezier(0.45,0,0.55,1);
+$ease-in-out-cubic: cubic-bezier(0.65,0,0.35,1);
+$ease-in-out-circ: cubic-bezier(0.85,0,0.15,1);
+
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+@keyframes scale-down-1 {
+	from,
+	90%,
+	to {
+		transform: translate(0,0) scale(1);
+	}
+	30% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(0,-45%) scale(0.57);
+	}
+	40% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(10%,-45%) scale(0.57);
+	}
+	50% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(-10%,-45%) scale(0.57);
+	}
+	60% {
+		animation-timing-function: $ease-in-out-circ;
+		transform: translate(0,-45%) scale(0.57);
+	}
+}
+@keyframes scale-down-2 {
+	from,
+	90%,
+	to {
+		transform: translate(0,20%) scale(0.85);
+	}
+	30%,
+	60% {
+		transform: translate(0,-45%) scale(0.57);
+	}
+}
+@keyframes scale-down-3 {
+	from,
+	90%,
+	to {
+		transform: translate(0,40%) scale(0.7);
+	}
+	30% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(0,-45%) scale(0.57);
+	}
+	40% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(-10%,-45%) scale(0.57);
+	}
+	50% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(10%,-45%) scale(0.57);
+	}
+	60% {
+		animation-timing-function: $ease-in-out-circ;
+		transform: translate(0,-45%) scale(0.57);
+	}
+}
+@keyframes scale-up-1 {
+	from,
+	90%,
+	to {
+		transform: translate(0,0) scale(0.33);
+	}
+	30% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(0,0) scale(1);
+	}
+	40% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(10%,0) scale(1);
+	}
+	50% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(-10%,0) scale(1);
+	}
+	60% {
+		animation-timing-function: $ease-in-out-circ;
+		transform: translate(0,0) scale(1);
+	}
+}
+@keyframes scale-up-2 {
+	from,
+	90%,
+	to {
+		transform: translate(0,15%) scale(0.3);
+	}
+	30%,
+	60% {
+		transform: translate(0,0) scale(1);
+	}
+}
+@keyframes scale-up-3 {
+	from,
+	90%,
+	to {
+		transform: translate(0,30%) scale(0.27);
+	}
+	30% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(0,0) scale(1);
+	}
+	40% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(-10%,0) scale(1);
+	}
+	50% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: translate(10%,0) scale(1);
+	}
+	60% {
+		animation-timing-function: $ease-in-out-circ;
+		transform: translate(0,0) scale(1);
+	}
+}
+@keyframes spin {
+	from {
+		animation-timing-function: $ease-in-out-quad;
+		transform: rotate(120deg);
+	}
+	33.33% {
+		animation-timing-function: $ease-in-out-cubic;
+		transform: rotate(130deg);
+	}
+	66.67% {
+		animation-timing-function: $ease-in-out-quad;
+		transform: rotate(255deg);
+	}
+	to {
+		transform: rotate(240deg);
+	}
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+}
+
+.is-visible {
+  opacity: 1;
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* 404 Page Styles */
+.page_404 {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  padding: 40px 0;
+  background: #fff;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.contant_box_404 {
+  margin-top: -50px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #ce261b;
+  margin: 20px 0;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.link_404:hover {
+  background: #be310e;
+}
