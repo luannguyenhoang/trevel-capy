@@ -2,7 +2,7 @@ import { Box, Heading } from "@chakra-ui/react";
 import styles from "@/styles/Post.module.css";
 import { replaceSeoRM } from "@/utils/replaceSeoRM";
 import { Metadata } from "next";
-import CommentsPost from "../comment";
+
 export async function generateMetadata({
   params,
 }: {
@@ -53,7 +53,7 @@ export async function generateMetadata({
 async function getPostData(slug: string) {
   try {
     const apiUrl = `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/posts?slug=${slug}`;
-    const res = await fetch(apiUrl, { next: { revalidate: 0 } });
+    const res = await fetch(apiUrl, { next: { revalidate: 3600 } });
 
     if (!res.ok) {
       throw new Error("Không tìm thấy bài viết");
@@ -105,9 +105,8 @@ export default async function BaiVietDetail({
       />
       <div
         className={styles["post__heading"]}
-        dangerouslySetInnerHTML={{ __html: data.content.rendered }}
+        dangerouslySetInnerHTML={{ __html: data?.content?.rendered || "" }}
       />
-      <CommentsPost slug={data?.id} />
     </Box>
   );
 }

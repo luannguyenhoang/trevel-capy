@@ -53,7 +53,7 @@ export async function generateMetadata({
 async function getPostData(slug: string) {
   try {
     const apiUrl = `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/posts?slug=${slug}`;
-    const res = await fetch(apiUrl, { next: { revalidate: 0 } });
+    const res = await fetch(apiUrl, { next: { revalidate: 3600 } };
 
     if (!res.ok) {
       throw new Error("Không tìm thấy bài viết");

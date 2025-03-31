@@ -2,14 +2,10 @@ import { Box, Heading } from "@chakra-ui/react";
 import styles from "@/styles/Post.module.css";
 import { replaceSeoRM } from "@/utils/replaceSeoRM";
 import { Metadata } from "next";
-import CommentsPost from "../comment";
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const { slug } = params;
 
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params;
+  
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_RMS_URL}${slug}`,
@@ -34,8 +30,7 @@ export async function generateMetadata({
     };
 
     const title = getTitleFromMeta(processedHead) || "Du Lịch Việt Nam";
-    const description =
-      getDescriptionFromMeta(processedHead) || "Khám phá vẻ đẹp Việt Nam";
+    const description = getDescriptionFromMeta(processedHead) || "Khám phá vẻ đẹp Việt Nam";
 
     return {
       title,
@@ -53,12 +48,12 @@ export async function generateMetadata({
 async function getPostData(slug: string) {
   try {
     const apiUrl = `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/posts?slug=${slug}`;
-    const res = await fetch(apiUrl, { next: { revalidate: 0 } });
-
+    const res = await fetch(apiUrl, { next: { revalidate: 3600 } });
+    
     if (!res.ok) {
       throw new Error("Không tìm thấy bài viết");
     }
-
+    
     const posts = await res.json();
     return posts[0] || null;
   } catch (error) {
@@ -67,11 +62,8 @@ async function getPostData(slug: string) {
   }
 }
 
-export default async function BaiVietDetail({
-  params,
-}: {
-  params: { slug: string };
-}) {
+
+export default async function BaiVietDetail({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const data = await getPostData(slug);
 
@@ -105,9 +97,8 @@ export default async function BaiVietDetail({
       />
       <div
         className={styles["post__heading"]}
-        dangerouslySetInnerHTML={{ __html: data.content.rendered }}
+        dangerouslySetInnerHTML={{ __html: data?.content?.rendered || "" }}
       />
-      <CommentsPost slug={data?.id} />
     </Box>
   );
 }
